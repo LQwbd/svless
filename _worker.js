@@ -878,7 +878,7 @@ function 配置信息(UUID, 域名地址) {
 		传输层安全 = ['',false];
 	}
 
-	const v2ray = `${协议类型}://${用户ID}@${地址}:${端口}?encryption=${加密方式}&security=${传输层安全[0]}&sni=${SNI}&fp=${指纹}&type=${传输层协议}&host=${伪装域名}&path=${encodeURIComponent(路径)}#${encodeURIComponent(别名)}`;
+	const v2ray = `${协议类型}://${用户ID}@${地址}:${端口}?加密方式=${加密方式}&security=${传输层安全[0]}&sni=${SNI}&fp=${指纹}&type=${传输层协议}&host=${伪装域名}&path=${encodeURIComponent(路径)}#${encodeURIComponent(别名)}`;
 	const clash = `- type: ${协议类型}
 	name: ${别名}
 	server: ${地址}
