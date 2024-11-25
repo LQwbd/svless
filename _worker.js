@@ -952,16 +952,6 @@ async function getVLESSConfig(userID, hostName, sub, userAgent, RproxyIP) {
 		if (typeof fetch != 'function') {
 			return 'Error: fetch is not available in this environment.';
 		}
-		// 如果是使用默认域名，则改成一个workers的域名，订阅器会加上代理
-		if (hostName.includes(".workers.dev")){
-			fakeHostName = `${fakeHostName}.${generateRandomString()}${generateRandomNumber()}.workers.dev`;
-		} else if (hostName.includes(".pages.dev")){
-			fakeHostName = `${fakeHostName}.${generateRandomString()}${generateRandomNumber()}.pages.dev`;
-		} else if (hostName.includes("worker") || hostName.includes("notls") || tls == false){
-			fakeHostName = `notls.${fakeHostName}${generateRandomNumber()}.net`;
-		} else {
-			fakeHostName = `${fakeHostName}.${generateRandomNumber()}.xyz`
-		}
 
 		let url = `https://${sub}/sub?host=${fakeHostName}&uuid=${fakeUserID}&LQLY=LQwbd&proxyip=${RproxyIP}`;
 		let isBase64 = false;
