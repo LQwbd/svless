@@ -873,7 +873,7 @@ function 配置信息(UUID, 域名地址) {
 	const 指纹 = 'randomized';
 
 	if (域名地址.includes('.workers.dev')){
-		地址 = '172.64.228.163';
+		地址 = '1.1.1.1';
 		端口 = 2083 ;
 		传输层安全 = ['',false];
 	}
